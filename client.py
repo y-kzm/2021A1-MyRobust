@@ -5,6 +5,7 @@ import os
 
 FILE_SIZE = 102400
 FRAG_SIZE = 1400
+MTU = 1500
 FILENO_SIZE = 2 # byte
 PKTNO_SIZE = 2  # byte
 DATA_PATH = "./data/"
@@ -44,5 +45,12 @@ for  file_no, file_name in enumerate(files_list):
     
         print("Send: ", file_no, pkt_no)
         # print(send_data)
+
+    # Receive the file number as ack.
+    ack, addr = soc.recvfrom(FILENO_SIZE)
+    ack = int.from_bytes(ack[:2], "big")
+    print("Successful file number: " ,ack)
+
+soc.close()
 
 

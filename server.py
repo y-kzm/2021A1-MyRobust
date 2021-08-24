@@ -8,7 +8,7 @@ MTU = 1500
 FRAG_SIZE = 1400
 FILENO_SIZE = 2 # byte
 PKTNO_SIZE = 2  # byte
-DATA_PATH = "./data2/"
+DATA_PATH = "./data_rcv/"
 
 # Src param.
 SrcIP = "127.0.0.1"
@@ -31,8 +31,9 @@ soc.bind(SrcAddr)
 while True:
     try: 
         data_list = []
+        pkt_no = 0
         # Packet number loop.
-        while True:           
+        while True:       
             recv_data, addr = soc.recvfrom(MTU)
 
             # The first 4 bytes are the header.
@@ -44,10 +45,11 @@ while True:
 
             print("Recv: ", file_no, pkt_no)
             # print(data_list)
-            
+
             # It's not "+1" because it's the end of the loop.
             if pkt_no == (FILE_SIZE//FRAG_SIZE):
                 break
+
 
         file = "".join(data_list)
         # print("-----File Data.-----")
@@ -56,8 +58,20 @@ while True:
         fp.write(file)
         fp.close()
 
+        # Return the file number as ack.
+        soc.sendto(hdr[:2], addr)
+        
+
     except KeyboardInterrupt: 
         print("\nEND.")
+        soc.close()
         break
+
+
+# Memo
+# Server.
+# pkt_noごとにACKを返す
+# Client.
+# ACKに合わせてpkt_noを投げる
 
 
