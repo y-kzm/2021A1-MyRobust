@@ -8,14 +8,17 @@ MTU = 1500
 FRAG_SIZE = 1400
 FILENO_SIZE = 2 # byte
 PKTNO_SIZE = 2  # byte
-DATA_PATH = "./data_rcv/"
+# DATA_PATH = "./data_rcv/"     # Loopback.
+DATA_PATH = "./data/"
 
 # Src param.
-SrcIP = "127.0.0.1"
+# SrcIP = "127.0.0.1"           # Loopback.
+SrcIP = "169.254.299.153"       # Hanko.
 SrcPort = 8080
 SrcAddr = (SrcIP, SrcPort)
 # Dst param.
 # DstIP = "127.0.0.1"
+# DstIP = "169.254.155.219"     # Taro.
 # DstPort = 8080
 # DstAddr = (DstIP, DstPort)
 

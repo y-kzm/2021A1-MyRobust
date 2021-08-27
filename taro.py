@@ -13,11 +13,13 @@ PKTNO_SIZE = 2  # byte
 DATA_PATH = "./data/"
 
 # Src param.
-SrcIP = "127.0.0.2"
+# SrcIP = "127.0.0.2"           # Loopback.
+SrcIP = "169.254.155.219"       # Taro.
 SrcPort = 8080
 SrcAddr = (SrcIP, SrcPort)
 # Dst param.
-DstIP = "127.0.0.1"
+# DstIP = "127.0.0.1"           # Loopback.
+DstIP = "169.254.299.153"       # Hanko.
 DstPort = 8080
 DstAddr = (DstIP, DstPort)
 
