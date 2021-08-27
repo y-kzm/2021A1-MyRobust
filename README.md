@@ -1,14 +1,18 @@
 # SecCamp[A-8]
+
+---
 ## My Robust Protocol
 Yokoo Kazuma  
 2021_08_27  
 
+---
 ## Ready. 
 ~~~
 ### Taro. ###
 $ ./ready.sh./hsa
 ~~~
 
+---
 ## Usage. 
 ~~~
 ### Hanako. ###
@@ -18,12 +22,14 @@ $ ./yokoo/hanako.py
 $ timeout 120 ./yokoo/taro.py
 ~~~
 
+---
 ## Check. 
 ~~~
 ### Hanako. ###
 ./cmp.py
 ~~~
 
+---
 ## Memo.
 * server.py と client.py は、ただファイルデータをフラグメントしてUDP上で送信するだけのプログラム  
 * hanako.py と taro.py は上記にACKを加えたプログラム  
