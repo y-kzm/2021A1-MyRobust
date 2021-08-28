@@ -10,7 +10,7 @@ FRAG_SIZE = 1400
 MTU = 1500
 FILENO_SIZE = 2 # byte
 PKTNO_SIZE = 2  # byte
-DATA_PATH = "./data/"
+DATA_PATH = "~/data/"
 
 # Src param.
 # SrcIP = "127.0.0.2"           # Loopback.
