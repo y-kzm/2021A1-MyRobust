@@ -9,17 +9,17 @@ Yokoo Kazuma
 ## Ready. 
 ~~~
 ### Taro. ###
-$ ./ready.sh./hsa
+$ ./ready.sh
 ~~~
 
 ---
 ## Usage. 
 ~~~
 ### Hanako. ###
-$ ./yokoo/hanako.py
+$ ./yokoo/robust/hanako.py
 
 ### Taro. ###
-$ timeout 120 ./yokoo/taro.py
+$ timeout 120 ./yokoo/robust/taro.py
 ~~~
 
 ---
